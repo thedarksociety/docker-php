@@ -18,7 +18,7 @@ RUN \
     libmemcached-dev \ #build
     libmemcachedutil2 \
     libmysqlclient-dev \ #build
-    libping12-dev \
+    libpng12-dev \
     libpq-dev \
     libsasl2-dev \ #build
     libxml2-dev \
@@ -54,11 +54,8 @@ RUN \
     zendopcache \
     && docker-php-ext-enable memcached.so redis.so opcache.so
 
-RUN \
-    apt-get purge -y --auto-remove $builds \
-    rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
-# Install Composer into the Container
 RUN \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && ln -s $(composer config --global home) /root/composer
