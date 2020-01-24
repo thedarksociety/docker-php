@@ -1,0 +1,7 @@
+{
+  "name": "iods/php",
+  "description": "A base docker image for PHP.",
+  "license": [
+    "MIT"
+  ]
+}
