@@ -4,7 +4,6 @@ LABEL maintainer="Rye Miller" \
       vendor="Darkstar Development" \
       version="0.1.0"
 
-# Install PHP/Pecl Dependencies
 RUN \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -19,7 +18,7 @@ RUN \
     libmemcached-dev \
     libmemcachedutil2 \
     libmysqlclient-dev \
-    libping12-dev \
+    libpng12-dev \
     libpq-dev \
     libsasl2-dev \
     libxml2-dev \
@@ -55,10 +54,8 @@ RUN \
     zendopcache \
     && docker-php-ext-enable memcached.so redis.so opcache.so
 
-RUN \
-    rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
-# Install Composer
 RUN \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && ln -s $(composer config --global home) /root/composer

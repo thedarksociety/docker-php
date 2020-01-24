@@ -9,18 +9,18 @@ RUN \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
     git \
-    libbz2-dev \ #build
+    libbz2-dev \
     libfreetype6-dev \
     libicu-dev \
     libjpeg-dev \
     libldap2-dev \
     libmcrypt-dev \
-    libmemcached-dev \ #build
+    libmemcached-dev \
     libmemcachedutil2 \
-    libmysqlclient-dev \ #build
-    libping12-dev \
+    libmysqlclient-dev \
+    libpng12-dev \
     libpq-dev \
-    libsasl2-dev \ #build
+    libsasl2-dev \
     libxml2-dev \
     libxslt1-dev
 
@@ -54,11 +54,8 @@ RUN \
     zendopcache \
     && docker-php-ext-enable memcached.so redis.so opcache.so
 
-RUN \
-    apt-get purge -y --auto-remove $builds \
-    rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
-# Install Composer into the Container
 RUN \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && ln -s $(composer config --global home) /root/composer
