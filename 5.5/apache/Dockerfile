@@ -2,7 +2,7 @@ FROM php:5.5-apache
 
 LABEL maintainer="Rye Miller" \
       vendor="Darkstar Development" \
-      version="0.1.0"
+      version="0.2.0"
 
 RUN \
     apt-get update && \
