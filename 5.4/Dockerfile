@@ -51,8 +51,9 @@ RUN \
     pecl install \
     memcached-2.2.0 \
     redis-4.3.0 \
+    xdebug-2.9.0 \
     zendopcache \
-    && docker-php-ext-enable memcached.so redis.so opcache.so
+    && docker-php-ext-enable memcached.so redis.so opcache.so xdebug.so
 
 RUN rm -rf /var/lib/apt/lists/*
 
