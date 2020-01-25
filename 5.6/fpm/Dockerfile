@@ -2,25 +2,25 @@ FROM php:5.6-fpm
 
 LABEL maintainer="Rye Miller" \
       vendor="Darkstar Development" \
-      version="0.1.0"
+      version="0.2.0"
 
 RUN \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
     git \
-    libbz2-dev \ #build
+    libbz2-dev \
     libfreetype6-dev \
     libicu-dev \
     libjpeg-dev \
     libldap2-dev \
     libmcrypt-dev \
-    libmemcached-dev \ #build
+    libmemcached-dev \
     libmemcachedutil2 \
-    libmysqlclient-dev \ #build
+    libmysqlclient-dev \
     libpng12-dev \
     libpq-dev \
-    libsasl2-dev \ #build
+    libsasl2-dev \
     libxml2-dev \
     libxslt1-dev
 
