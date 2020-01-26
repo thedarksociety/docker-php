@@ -2,11 +2,20 @@ FROM php:5.6-cli
 
 LABEL maintainer="Rye Miller" \
       vendor="Darkstar Development" \
-      version="0.2.1"
+      version="0.2"
+
+ENV APCU_VERSION 4.0.11
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_HOME /home/.composer
+ENV MEMC_VERSION 2.2.0
+ENV PATH $PATH:/root/composer/vendor/bin
+ENV REDI_VERSION 4.3.0
+ENV XDEB_VERSION 2.9.0
 
 RUN \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    ca-certificates \
     curl \
     git \
     libbz2-dev \
@@ -22,7 +31,10 @@ RUN \
     libpq-dev \
     libsasl2-dev \
     libxml2-dev \
-    libxslt1-dev
+    libxslt1-dev \
+    openssh-client \
+    unzip \
+    zlib1g-dev
 
 RUN \
     docker-php-ext-install \
@@ -49,15 +61,22 @@ RUN \
 
 RUN \
     pecl install \
-    memcached-2.2.0 \
-    redis-4.3.0 \
-    xdebug-2.9.0 \
+    apcu-${APCU_VERSION} \
+    memcached-${MEMC_VERSION} \
+    redis-${REDI_VERSION} \
+    xdebug-${XDEB_VERSION} \
     zendopcache \
-    && docker-php-ext-enable memcached.so redis.so opcache.so xdebug.so
+    && docker-php-ext-enable \
+    apcu \
+    memcached.so \
+    opcache.so \
+    redis.sc \
+    xdebug.so
 
-RUN rm -rf /var/lib/apt/lists/*
+RUN \
+    apt-get clean \
+    && rm -Rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && ln -s $(composer config --global home) /root/composer
-ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1

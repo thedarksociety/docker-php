@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:latest
 
 LABEL maintainer="Rye Miller" \
       vendor="Darkstar Development" \
