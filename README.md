@@ -4,13 +4,13 @@
 Docker Images for PHP
 =====================
 
-Base images for PHP versions 5 and 7 configured to work with as a boilerplate. :neckbeard:
+Base images for PHP versions 5 and 7 configured to work with as a boilerplate.
 
 
 Facts
 -----
 
- * Version 0.2.1
+ * Version 0.2.2
  * [Repository on GitHub](https://github.com/iods/php-docker)
  * [Docker Hub](https://hub.docker.com/r/iods/php)
  

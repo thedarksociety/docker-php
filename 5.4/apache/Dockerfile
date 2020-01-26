@@ -2,7 +2,7 @@ FROM php:5.4-apache
 
 LABEL maintainer="Rye Miller" \
       vendor="Darkstar Development" \
-      version="0.2.1"
+      version="0.2"
 
 ENV APCU_VERSION 4.0.11
 ENV COMPOSER_ALLOW_SUPERUSER 1
