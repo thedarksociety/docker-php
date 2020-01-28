@@ -10,7 +10,7 @@ Base images for PHP versions 5 and 7 configured to work with as a boilerplate.
 Facts
 -----
 
- * Version 0.2.2
+ * Version 0.2.3
  * [Repository on GitHub](https://github.com/iods/php-docker)
  * [Docker Hub](https://hub.docker.com/r/iods/php)
  

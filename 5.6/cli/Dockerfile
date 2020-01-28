@@ -70,7 +70,7 @@ RUN \
     apcu \
     memcached.so \
     opcache.so \
-    redis.sc \
+    redis.so \
     xdebug.so
 
 RUN \
