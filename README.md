@@ -13,8 +13,8 @@ Facts
  * Version 0.2.3
  * [Repository on GitHub](https://github.com/iods/php-docker)
  * [Docker Hub](https://hub.docker.com/r/iods/php)
- 
- 
+
+
 Description
 -----------
 
@@ -29,8 +29,8 @@ Requirements
  * [Git](https://git-scm.org)
  * [Docker](http://docker.io)
  * [Composer](http://getcomposer.org)
- 
- 
+
+
 Developer
 ---------
 
@@ -57,7 +57,7 @@ Resources
 ---------
 
  * [Developer Standards](https://github.com/GalvanizeOpenSource/developer-standards)
- 
+
 
 Acknowledgements
 ----------------
@@ -75,3 +75,116 @@ Copyright
 ---------
 
 Copyright (c) 2020 Rye Miller
+
+
+
+PHP Image for the DSCR
+======================
+
+### Description
+
+PHP images. PHP Image. Bake me a PHP Image.
+
+> No one reads this shit anyway.
+
+
+## TL;DR
+
+```sh
+$ docker run --name php [image]
+```
+
+
+## Facts
+
+ * Version 0.1
+ * [Repository on GitHub](https://github.com/thedarksociety/docker-php)
+
+
+Getting Started
+---------------
+
+Here is some information.
+
+### Requirements
+
+ * [Git](https://git-scm.org)
+ * [Docker](http://docker.io)
+
+
+### Supported Versions
+
+ * [`7.3`, (Dockerfile)](link)
+ * [`7.4`, (Dockerfile)](link)
+ * [`8.0`, (Dockerfile)](link)
+
+
+Usage
+-----
+
+### Features
+
+ * One
+ * Two
+ * THree
+
+
+### Pulling the Image
+
+
+### Environment
+
+| Package | Description |
+| ------- | ----------- |
+| bash | Bash packeage. |
+| sudo | For obvious reasons.|
+
+
+### Scripts
+
+| Script | Description |
+| ------- | ----------- |
+| docker-entrypoint.sh | Configuration and initiation for the container. |
+| docker-healthcheck.sh |Confirm the container is running and in a health state.|
+
+Resources
+---------
+
+ * [Developer Standards](https://github.com/GalvanizeOpenSource/developer-standards)
+
+
+Developers
+---------
+
+**Rye Miller**
+ * [Github](https://github.com/iods)
+ * [Homepage](http://ryemiller.io)
+ * [@ryemiller](http://twitter.com/ryemiller)
+
+**Tiffany Creamer**
+ * [Github](https://github.com/tnondairy)
+
+
+Changelog
+---------
+
+### [2020-11-27]
+
+
+Known Issues
+------------
+
+Any known issues can be viewed or added on [GitHub](https://github.com/thedarksociety/docker-php/issues).
+
+
+Versioning
+----------
+
+For transparency into the release cycle and in striving to maintain backwards compatibility, this project is
+maintained under [the Semantic Versioning Guidelines](http://semver.og).
+
+
+Copyright
+---------
+
+Copyright (c) 2020 The Dark Society

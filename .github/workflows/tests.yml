@@ -1,0 +1,33 @@
+name: CI Tests Workflow [1]
+
+on:
+  push:
+    branches:
+      - '7.3-*'
+      - '7.4-*'
+      - '7.5-*'
+
+env:
+  GIT_SHA: ${{ github.sha }}
+  GIT_REF: ${{ github.ref }}
+  REGISTRY_NAME: gcr.io
+  IMAGE_NAME: php
+
+jobs:
+  test:
+    name: Image Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
+      - name: Run Compose Tests
+        run: |
+          export TAG=`echo $GIT_REF | awk -F/ '{print $NF}'`
+          export VERSION=`echo $TAG | cut -d "-" -f 1`
+          export ENGINE=`echo $TAG | cut -d "-" -f 2`
+          if [ -f docker-compose.yml ];
+            docker-compose --file docker-compose.$VERSION.yml build
+            docker-compose --file docker-compose.$VERSION.yml run sut
+          else
+            docker build . --file "$VERSION"/"$ENGINE"/Dockerfile
+          fi
