@@ -48,20 +48,41 @@ Usage
 
 ### Features
 
-* One
-* Two
-* THree
+  * Timezone
+  * PHP Extension Installer
+  * Composer
+
+
+#### Timezone
+
+Whether it has been due to copypasta or forgotten settings in previous ENV setups continuing 
+through to final builds, whatever it is, timezones should be explicitly set for Denver.
+
+[The solution](https://stackoverflow.com/questions/45587214/configure-timezone-in-dockerized-nginx-php-fpm?noredirect=1&lq=1).
+
+
+#### PHP Extension Installer
+
+This installer helps to decrease image size, by removing unneeded packages. It is installed
+locally to the image, so running `docker pull mlocati/php-extension-installer` updates any 
+versions of the libraries that may have been updated since the last pull.
+
+[The solution](https://github.com/mlocati/docker-php-extension-installer)
 
 
 ### Pulling the Image
+
+```sh
+$ docker pull gcr.io/darksociety-containers/php:7.2-apache
+```
 
 
 ### Environment
 
 | Package | Description |
 | ------- | ----------- |
-| bash | Bash packeage. |
-| sudo | For obvious reasons.|
+| git | Git is used for pulling down libs and services, this is across all my projects. |
+| zip | For obvious reasons.|
 
 
 ### Scripts
