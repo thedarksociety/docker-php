@@ -1,0 +1,44 @@
+name: Scheduled CI Tests
+on:
+  workflow_dispatch:
+#    schedule:
+#      - cron: "0,30 * * * *"
+env:
+  GIT_REF: ${{ github.ref }}
+  GIT_SHA: ${{ github.sha }}
+  REPOSITORY_NAME: ${{ github.repository }}
+  WORKSPACE: ${{ github.workspace }}
+  REGISTRY_NAME: gcr.io
+  NO_CACHE: true
+  DOCKERFILE: Dockerfile
+  VERSION: 1.3
+jobs:
+  test_pre_build:
+    name: Run Pre-Build Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@main
+      - name: ENV Variable Test
+        run: bash ./pre_build.sh
+  test_build:
+    name: Run Build Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@main
+      - name: ENV Variable Test
+        env:
+          PROJECT_ID: ${{ secrets.CONTAINERS_PROJECT_ID }}
+        run: bash ./build.sh
+  test_post_build:
+    name: Run Post Build Job
+    runs-on: ubuntu-18.04
+  test_release:
+    name: Run Release Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@main
+      - name: ENV Variable Test (Release)
+        run: bash ./release.sh

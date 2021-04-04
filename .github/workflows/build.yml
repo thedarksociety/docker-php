@@ -1,0 +1,43 @@
+name: Build CI
+env:
+  WORKSPACE: ${{ github.workspace }}
+  GIT_REF: ${{ github.ref }}
+  GIT_SHA: ${{ github.sha }}
+  REPOSITORY_NAME: ${{ github.repository }}
+  REGISTRY_NAME: gcr.io
+  NO_CACHE: true
+  PROJECT_ID: darksociety-containers
+on:
+  push:
+    branches-ignore:
+      - develop
+      - main
+jobs:
+  pre_build:
+    name: Run Build Validation Test
+    runs-on: ubuntu-18.04
+    outputs:
+      name: ${{ steps.pre_build.outputs.name }}
+  build:
+    name: Run Build Test
+    runs-on: ubuntu-18.04
+    outputs:
+      name: ${{ steps.build.outputs.name }}
+      version: ${{ steps.build.outputs.version }}
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@main
+      - name: Build from Source
+        id: build
+        run: |
+          bash ./build.sh
+          echo ${{ needs.pre_build.outputs.name }}
+  post_build:
+    name: Run Build Output Test
+    runs-on: ubuntu-18.04
+    needs: build
+    steps:
+      - name: Output previous jobs text.
+        run: |
+          echo ${{ needs.build.outputs.name }}
+          echo ${{ needs.build.outputs.version }}
