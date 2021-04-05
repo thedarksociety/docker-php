@@ -1,28 +1,10 @@
+# Makefile - Docker for PHP
+#
+# [1] Builds locally and for the DSCR
 
-.PHONY: build
+.PHONY:
 
 REGISTRY=gcr.io/darksociety-containers/
 
-
-up:
-	@docker-compose up -d
-
-build:
-	@docker-compose build --no-cache --force-rm
-
-
-stop:
-	@docker-compose stop
-
-
-down:
-	@docker-compose down --remove-orphans
-
-
-restart:
-	@make down
-	@make up
-
-
-destroy:
-	@docker-compose down --rmi all --volumes --remove-orphans
+apache:
+	@docker build --tag=$(REGISTRY)php:7.2-apache
