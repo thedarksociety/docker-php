@@ -37,10 +37,12 @@ and make mistakes doing it.
 
 ### Supported Versions
 
-* [`7.2`, (Dockerfile)](link)
-* [`7.3`, (Dockerfile)](link)
-* [`7.4`, (Dockerfile)](link)
-* [`8.0`, (Dockerfile)](link)
+ * [`7.2`, (Dockerfile)](link)
+ * [`7.3`, (Dockerfile)](link)
+ * [`7.4`, (Dockerfile)](link)
+ * [`8.0`, (Dockerfile)](link)
+ * [`8.1`, (Dockerfile)](link)
+ * [`8.2`, (Dockerfile)](link)
 
 
 Usage
