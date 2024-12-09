@@ -1,0 +1,7 @@
+services:
+
+  php-apache:
+    build:
+      context: build/php/8.4/apache
+      dockerfile: Dockerfile
+    container_name: php84-apache

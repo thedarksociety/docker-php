@@ -17,7 +17,7 @@ $ docker run --name php [image]
 
 ## Facts
 
- * Version 0.2.3
+ * Version 0.2.7
  * [Repository on GitHub](https://github.com/thedarksociety/docker-php)
 
 
@@ -43,6 +43,8 @@ and make mistakes doing it.
  * [`8.0`, (Dockerfile)](link)
  * [`8.1`, (Dockerfile)](link)
  * [`8.2`, (Dockerfile)](link)
+ * [`8.3`, (Dockerfile)](link)
+ * [`8.4`, (Dockerfile)](link)
 
 
 Usage
@@ -57,7 +59,7 @@ Usage
 
 #### Timezone
 
-Whether it has been due to copypasta or forgotten settings in previous ENV setups continuing 
+Whether it has been due to copypasta or forgotten settings in previous ENV setups continuing
 through to final builds, whatever it is, timezones should be explicitly set for Denver.
 
 [The solution](https://stackoverflow.com/questions/45587214/configure-timezone-in-dockerized-nginx-php-fpm?noredirect=1&lq=1).
@@ -66,7 +68,7 @@ through to final builds, whatever it is, timezones should be explicitly set for 
 #### PHP Extension Installer
 
 This installer helps to decrease image size, by removing unneeded packages. It is installed
-locally to the image, so running `docker pull mlocati/php-extension-installer` updates any 
+locally to the image, so running `docker pull mlocati/php-extension-installer` updates any
 versions of the libraries that may have been updated since the last pull.
 
 [The solution](https://github.com/mlocati/docker-php-extension-installer)
@@ -101,10 +103,6 @@ Developers
 **Rye Miller**
  * [Github](https://github.com/iods)
  * [Homepage](http://ryemiller.io)
- * [@ryemiller](http://twitter.com/ryemiller)
-
-**Tiffany Creamer**
- * [Github](https://github.com/tnondairy)
 
 
 Changelog
@@ -139,4 +137,4 @@ This project/code is released under [the MIT license](https://github.com/thedark
 Copyright
 ---------
 
-Copyright (c) 2020-2021, Rye Miller
+Copyright (c) 2020-2024, Rye Miller

@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:5.6-cli
 
 LABEL \
   maintainer="The Dark Society <containers@darksociety.cloud" \

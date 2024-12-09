@@ -1,0 +1,7 @@
+services:
+
+  php-apache:
+    build:
+      context: build/php/8.1/apache
+      dockerfile: Dockerfile
+    container_name: php81-apache

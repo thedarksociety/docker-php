@@ -1,0 +1,7 @@
+services:
+
+  php-apache:
+    build:
+      context: build/php/7.3/apache
+      dockerfile: Dockerfile
+    container_name: php73-apache

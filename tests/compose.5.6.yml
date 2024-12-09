@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  php-apache:
+    build:
+      context: image/php/5.6/apache
+      dockerfile: Dockerfile
+    container_name: php56-apache

@@ -1,6 +1,9 @@
 FROM php:7.3-cli
 
-LABEL maintainer="The Dark Society <containers@darksociety.cloud>"
+LABEL \
+  maintainer="The Dark Society <containers@darksociety.cloud" \
+  vendor="The Dark Society" \
+  version="0.1.0"
 
 # install php extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
