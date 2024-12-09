@@ -1,6 +1,9 @@
 FROM php:7.4-fpm
 
-LABEL maintainer="containers@darksociety.cloud"
+LABEL \
+  maintainer="The Dark Society <containers@darksociety.cloud" \
+  vendor="The Dark Society" \
+  version="0.1.0"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
